@@ -362,6 +362,8 @@
         1,
         null,
         1,
+        null,
+        1,
         null
       ],
       "/Users/Guest/Desktop/stack_overflow/spec/features/user_pages_spec.rb": [
@@ -424,6 +426,6 @@
         null
       ]
     },
-    "timestamp": 1445290256
+    "timestamp": 1445290622
   }
 }
