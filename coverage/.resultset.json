@@ -239,6 +239,20 @@
         1,
         null,
         1,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/Guest/Desktop/stack_overflow/spec/factories.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/Guest/Desktop/stack_overflow/config/routes.rb": [
@@ -319,9 +333,14 @@
         2,
         2,
         2,
+        null,
+        1,
+        1,
+        1,
+        null,
         null
       ]
     },
-    "timestamp": 1445273101
+    "timestamp": 1445273561
   }
 }
