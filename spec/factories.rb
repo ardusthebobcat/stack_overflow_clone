@@ -3,6 +3,6 @@ FactoryGirl.define do
     first_name("John")
     last_name("Smith")
     email("fake@fake.com")
-    password_hash("fakepassword")
+    password("fakepassword")
   end
 end

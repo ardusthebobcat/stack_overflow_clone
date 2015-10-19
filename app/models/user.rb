@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :answers
 
-  validates :first_name, :last_name, :email, presence: true
+  validates :first_name, :last_name, :email, :password, presence: true
 
   def full_name
     self.first_name.concat(" ").concat(self.last_name)
