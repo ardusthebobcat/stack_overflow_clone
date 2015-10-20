@@ -19,3 +19,22 @@ describe "create user path" do
     expect(page).to have_content "There was a problem"
   end
 end
+
+describe "user page" do
+  it "will display the users page" do
+    user = FactoryGirl.create(:user)
+    visit '/'
+    click_on "LOG-IN"
+    fill_in "Email", with: "fake@fake.com"
+    fill_in "Password", with: "fakepassword"
+    click_on "Log In"
+    click_on "John Smith"
+    expect(page).to have_content "Add Post"
+  end
+
+  it "will give an error if not logged in" do
+    user = FactoryGirl.create(:user)
+    visit user_path(user)
+    expect(page).to have_content "You must be logged in!"
+  end
+end

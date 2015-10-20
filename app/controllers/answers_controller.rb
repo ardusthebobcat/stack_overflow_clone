@@ -5,13 +5,14 @@ class AnswersController < ApplicationController
   end
 
   def create
+    @post = Post.find(params[:post_id])
     temp_params = answer_params
     temp_params[:user_id] = session[:user_id]
-    temp_params[:post_id] = params[:post_id]
+    temp_params[:post_id] = @post.id
     @answer = Answer.new(temp_params)
     if @answer.save
       flash[:success] = "Thanks for submitting your answer #{current_user.full_name}!"
-      redirect_to post_path(params[:post_id])
+      redirect_to post_path(@post)
     else
       flash[:danger] = "There was a problem!"
       render :new

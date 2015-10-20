@@ -8,6 +8,7 @@ describe "add new post" do
     fill_in "Email", with: "fake@fake.com"
     fill_in "Password", with: "fakepassword"
     click_on "Log In"
+    visit user_path(user)
     click_on "Add Post"
     fill_in "Question", with: "Test"
     fill_in "Description", with: "Test"
@@ -21,6 +22,7 @@ describe "add new post" do
     fill_in "Email", with: "fake@fake.com"
     fill_in "Password", with: "fakepassword"
     click_on "Log In"
+    visit user_path(user)
     click_on "Add Post"
     click_on "Create Post"
     expect(page).to have_content "There was a problem"
