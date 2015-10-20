@@ -31,8 +31,6 @@ ________________________________
 
 As an administrator, I want to see the daily number of questions and responses added.
 
-As an administrator, I want to be able to make other users administrators.
-
 As a user who asked a question, I want to choose the best answer, so that it is displayed before the other answers and future users see it first.
 
 As a user who didn't ask a question, I want to vote on which answer I think is best, so that higher-voted answers display higher on the page. Hint: Make votes a join table between users and answers.

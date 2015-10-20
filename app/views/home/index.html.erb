@@ -1,8 +1,12 @@
 <h1>Welcome to Stack Overflow</h1>
 
-<% @posts.each do |post| %>
-  <div class="row">
-    <h3><%= link_to "#{post.question}", post_path(post) %></h3>
-    <h5>Asked By: <%= post.user.full_name %> on <%= post.created_at.to_formatted_s(:long_ordinal) %></h5>
-  </div>
+<% if @posts.any? %>
+  <% @posts.each do |post| %>
+    <div class="row">
+      <h3><%= link_to "#{post.question}", post_path(post) %></h3>
+      <h5>Asked By: <%= post.user.full_name %> on <%= post.created_at.to_formatted_s(:long_ordinal) %></h5>
+    </div>
+  <% end %>
+<% else %>
+  <h3>There are no posts yet! Make an account and sign in to start asking!</h3>
 <% end %>
