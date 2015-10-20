@@ -10,10 +10,10 @@ describe "add new post" do
     click_on "Log In"
     visit user_path(user)
     click_on "Add Post"
-    fill_in "Question", with: "Test"
+    fill_in "Question", with: "Test Post"
     fill_in "Description", with: "Test"
     click_on "Create Post"
-    expect(page).to have_content "Test"
+    expect(page).to have_content "Test Post"
   end
 
   it "will give errors if post isn't created" do
@@ -34,7 +34,7 @@ describe "post page" do
     user = FactoryGirl.create(:user)
     post = FactoryGirl.create(:post)
     visit'/'
-    click_on "Test"
-    expect(page).to have_content "Test"
+    click_on "Test Post"
+    expect(page).to have_content "Test Post"
   end
 end

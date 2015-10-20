@@ -10,9 +10,9 @@ describe "new post" do
     click_on "Log In"
     visit post_path(post)
     click_on "Answer This!"
-    fill_in "Description", with: "Test"
+    fill_in "Description", with: "Test Answer"
     click_on "Create Answer"
-    expect(page).to have_content "Test"
+    expect(page).to have_content "Test Answer"
   end
 
   it "will display an error if there are errors" do
