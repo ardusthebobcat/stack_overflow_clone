@@ -2,3 +2,16 @@
 <p><em><%= @post.user.full_name %></em></p>
 
 <h3><%= @post.description %></h3>
+
+<% if session[:user_id] %>
+  <%= link_to "Answer This!", new_post_answer_path(@post), class: "btn btn-primary" %>
+<% end %>
+
+<h3>Here are all of the answers for this question:</h3>
+
+<% @post.answers.each do |answer| %>
+  <div class="row">
+    <h4><%= answer.description %></h4>
+    <p><em><%= answer.user.full_name %> - <%= answer.created_at.to_date.to_formatted_s(:long_ordinal) %></em></p>
+  </div>
+<% end %>

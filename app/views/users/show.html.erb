@@ -1,0 +1,19 @@
+<h1><%= @user.full_name %></h1>
+
+<%= link_to "Add Post", new_post_path, class: "btn btn-primary" %>
+
+<div class="row">
+  <div class="col-md-6">
+    <h3>Here are your Posts</h3>
+    <% @user.posts.each do |post| %>
+      <h4><%= link_to post.question, post_path(post) %></h4>
+    <% end %>
+  </div>
+  <div class="col-md-6">
+    <h3>Here are your Answers</h3>
+    <% @user.answers.each do |answer| %>
+      <h4><%= answer.description %></h4>
+      <h5>For: <%= answer.post.question %></h5>
+    <% end %>
+  </div>
+</div>

@@ -8,7 +8,7 @@ class PostsController < ApplicationController
     temp_params[:user_id] = session[:user_id]
     @post = Post.new(temp_params)
     if @post.save
-      flash[:success] = "Thanks for submitting your post"
+      flash[:success] = "Thanks for submitting your post #{current_user.full_name}!"
       redirect_to "/"
     else
       flash[:danger] = "There was a problem!"
