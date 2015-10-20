@@ -5,10 +5,16 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :answers
 
+  after_create :send_welcome_message
+
   validates :first_name, :last_name, :email, :password, presence: true
 
   def full_name
     self.first_name.concat(" ").concat(self.last_name)
+  end
+
+  def send_welcome_message
+    CustomerMailer.deliver_welcome_message(self).deliver_now
   end
 
   def encrypt_password
