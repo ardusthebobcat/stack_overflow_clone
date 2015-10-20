@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   validates :first_name, :last_name, :email, :password, presence: true
 
   def full_name
-    self.first_name.concat(" ").concat(self.last_name)
+    return (self.first_name + " " + self.last_name)
   end
 
   def send_welcome_message
