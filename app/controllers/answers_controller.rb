@@ -19,6 +19,13 @@ class AnswersController < ApplicationController
     end
   end
 
+  def destroy
+    answer = Answer.find(params[:id])
+    answer.destroy
+    flash[:success] = "Answer deleted successfully"
+    redirect_to '/admin'
+  end
+
 private
   def answer_params
     params.require(:answer).permit(:description, :post_id, :user_id)

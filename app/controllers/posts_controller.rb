@@ -20,6 +20,16 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def destroy
+    post = Post.find(params[:id])
+    post.answers.each do |answer|
+      answer.destroy
+    end
+    post.destroy
+    flash[:success] = "Post and it's Answers successfully deleted"
+    redirect_to '/admin'
+  end
+
 private
   def post_params
     params.require(:post).permit(:question, :description, :user_id)

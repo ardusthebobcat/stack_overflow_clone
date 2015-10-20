@@ -31,13 +31,7 @@ ________________________________
 
 As an administrator, I want to see the daily number of questions and responses added.
 
-As an administrator, I want to see a list of current user accounts so I know how many active members are on the site.
-
 As an administrator, I want to be able to make other users administrators.
-
-As an administrator, I want to be able to delete users, if necessary.
-
-As an administrator, I want a navbar that shows my admin options (reporting, user management).
 
 As a user who asked a question, I want to choose the best answer, so that it is displayed before the other answers and future users see it first.
 

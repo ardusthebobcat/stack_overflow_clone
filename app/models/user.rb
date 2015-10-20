@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   after_create :send_welcome_message
 
-  validates :first_name, :last_name, :email, :password, presence: true
+  validates :first_name, :last_name, :email, presence: true
 
   def full_name
     return (self.first_name + " " + self.last_name)

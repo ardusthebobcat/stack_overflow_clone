@@ -22,8 +22,28 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    user = User.find(params[:id])
+    user.destroy
+    flash[:success] = "User deleted successfully!"
+    redirect_to "/admin"
+  end
+
+  def update
+    user = User.find(params[:id])
+    if user.admin == false
+      user.update(admin: true)
+      flash[:success] = "#{user.full_name} is now an admin!"
+      redirect_to '/admin'
+    else
+      user.update(admin: false)
+      flash[:success] = "#{user.full_name} is no longer an admin!"
+      redirect_to '/admin'
+    end
+  end
+
 private
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :admin)
   end
 end
