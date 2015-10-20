@@ -3,4 +3,8 @@ class Post < ActiveRecord::Base
   has_many :answers
 
   validates :question, :description, presence: true
+
+  default_scope {
+    order("created_at ASC")
+  }
 end

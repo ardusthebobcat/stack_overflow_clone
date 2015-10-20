@@ -14,7 +14,12 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(current_user.id)
+    if session[:user_id]
+      @user = User.find(current_user.id)
+    else
+      flash[:danger] = "You must be logged in!"
+      redirect_to '/'
+    end
   end
 
 private
